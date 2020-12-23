@@ -102,7 +102,7 @@ namespace AdventCode2020
         string Part2()
         {
             List<int> tempCups = new List<int>(cups);
-            tempCups.AddRange(Enumerable.Range(10, 1_000_000 - tempCups.co));
+            tempCups.AddRange(Enumerable.Range(10, 1_000_000 - tempCups.Count));
 
             Dictionary<int, CupNode> cupNodes = new Dictionary<int, CupNode>();
             CupNode prevNode = null;
