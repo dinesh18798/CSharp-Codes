@@ -7,7 +7,7 @@ namespace AdventCode2020
 {
     public class Day24
     {
-        Dictionary<string, (int x, int y)> tilesDirection = new Dictionary<string, (int x, int y)>
+        readonly Dictionary<string, (int x, int y)> tilesDirection = new Dictionary<string, (int x, int y)>
         {
             { "e", (2, 0) },
             { "se", (1, -1) },
@@ -17,7 +17,7 @@ namespace AdventCode2020
             { "ne", (1, 1) }
         };
 
-        Dictionary<int, List<(int x, int y)>> tilesMap;
+        readonly Dictionary<int, List<(int x, int y)>> tilesMap;
 
         public Day24()
         {
@@ -49,6 +49,7 @@ namespace AdventCode2020
 
         private int Part2(HashSet<(int x, int y)> tileMap)
         {
+            tilesMap.Add(1, new List<(int x, int y)> { (2, 1) });
             HashSet<(int x, int y)> blackTileMap = tileMap;
             for (int i = 0; i < 100; i++)
             {
@@ -93,10 +94,10 @@ namespace AdventCode2020
             foreach (List<(int x, int y)> currMap in tilesMap.Values)
             {
                 (int x, int y) coord = (0, 0);
-                foreach (var currDirection in currMap)
+                foreach (var (x, y) in currMap)
                 {
-                    coord.x += currDirection.x;
-                    coord.y += currDirection.y;
+                    coord.x += x;
+                    coord.y += y;
                 }
                 if (tiles.Contains(coord))
                     tiles.Remove(coord);

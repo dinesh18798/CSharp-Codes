@@ -28,7 +28,7 @@ namespace AdventCode2020
             }
         }
 
-        List<int> cups;
+        readonly List<int> cups;
         public Day23()
         {
             cups = ("653427918").ToCharArray().Select(x => Convert.ToInt32(char.GetNumericValue(x))).ToList();

@@ -7,8 +7,8 @@ namespace AdventCode2020
 {
     public class Day22
     {
-        List<int> player1;
-        List<int> player2;
+        readonly List<int> player1;
+        readonly List<int> player2;
 
         public Day22()
         {
