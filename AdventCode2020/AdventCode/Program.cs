@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            _ = new Day23();
+            _ = new Day24();
         }
     }
 }
